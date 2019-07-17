@@ -1,4 +1,11 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<h1>CKEditor 5 integration with Angular</h1>
+
+<nav>
+	<ul>
+		<li><a routerLink="/simple-usage" routerLinkActive="active">Simple usage</a></li>
+		<li><a routerLink="/forms" routerLinkActive="active">Integration with forms (<code>ngModel</code>)</a></li>
+		<li><a routerLink="/reactive-forms" routerLinkActive="active">Integration with reactive forms (<code>formControlName</code>)</a></li>
+	</ul>
+</nav>
+
+<router-outlet></router-outlet>

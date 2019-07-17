@@ -1,46 +1,92 @@
 {
-  "name": "angular",
-  "version": "0.0.0",
+  "__IMPORTANT__": "This file won't be published. See `src/ckeditor/package.json`, which will be published on NPM.",
+  "name": "@ckeditor/ckeditor5-angular",
+  "version": "1.1.0",
   "private": true,
+  "description": "Official Angular component for CKEditor 5 – the best browser-based rich text editor.",
+  "scripts": {
+    "start": "ng serve --open",
+    "build": "ng build --prod",
+    "test": "ng test",
+    "coverage": "ng test --watch=false --code-coverage",
+    "lint": "eslint '*/**/*.+(js|ts)'",
+    "e2e": "ng e2e",
+    "changelog": "node ./scripts/changelog.js",
+    "build-package": "node ./scripts/build-package.js",
+    "release": "node ./scripts/release.js",
+    "postversion": "npm run build-package"
+  },
   "dependencies": {
+    "@angular/animations": "^8.0.0",
     "@angular/common": "^8.0.0",
     "@angular/compiler": "^8.0.0",
     "@angular/core": "^8.0.0",
     "@angular/forms": "^8.0.0",
+    "@angular/http": "^7.2.15",
     "@angular/platform-browser": "^8.0.0",
     "@angular/platform-browser-dynamic": "^8.0.0",
     "@angular/router": "^8.0.0",
-    "core-js": "2",
+    "core-js": "^3.1.3",
     "rxjs": "^6.5.2",
-    "zone.js": "^0.9.1"
-  },
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "zone.js": "^0.8.6"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.10.0",
-    "@angular/cli": "~7.0.2",
-    "@angular/compiler-cli": "~7.0.0",
-    "@angular/language-service": "~7.0.0",
-    "@types/node": "~8.9.4",
-    "@types/jasmine": "~2.8.8",
-    "@types/jasminewd2": "~2.0.3",
-    "codelyzer": "~4.5.0",
-    "jasmine-core": "~2.99.1",
-    "jasmine-spec-reporter": "~4.2.1",
-    "karma": "~3.0.0",
-    "karma-chrome-launcher": "~2.2.0",
-    "karma-coverage-istanbul-reporter": "~2.0.1",
-    "karma-jasmine": "~1.1.2",
-    "karma-jasmine-html-reporter": "^0.2.2",
-    "protractor": "~5.4.0",
-    "ts-node": "~7.0.0",
-    "tslint": "~5.11.0",
-    "typescript": "~3.1.1"
-  }
+    "@angular-devkit/build-angular": "~0.800.0",
+    "@angular/cli": "^8.0.0",
+    "@angular/compiler-cli": "^8.0.0",
+    "@angular/language-service": "^8.0.0",
+    "@ckeditor/ckeditor5-build-classic": "^12.1.0",
+    "@ckeditor/ckeditor5-dev-env": "^14.1.1",
+    "@ckeditor/ckeditor5-dev-utils": "^12.0.1",
+    "@types/jasmine": "^3.3.13",
+    "@types/jasminewd2": "^2.0.6",
+    "@typescript-eslint/eslint-plugin": "^1.9.0",
+    "@typescript-eslint/parser": "^1.9.0",
+    "coveralls": "^3.0.3",
+    "eslint": "^5.16.0",
+    "eslint-config-ckeditor5": "^1.0.14",
+    "fs-extra": "^8.0.1",
+    "husky": "^2.3.0",
+    "jasmine-core": "^3.4.0",
+    "jasmine-spec-reporter": "^4.2.1",
+    "karma": "^4.1.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-coverage-istanbul-reporter": "^2.0.5",
+    "karma-firefox-launcher": "^1.1.0",
+    "karma-jasmine": "^2.0.1",
+    "karma-jasmine-html-reporter": "^1.4.2",
+    "lint-staged": "^8.1.7",
+    "ng-packagr": "^5.2.0",
+    "protractor": "^5.4.2",
+    "ts-node": "^8.2.0",
+    "tsickle": "^0.35.0",
+    "typescript": "~3.4.5"
+  },
+  "engines": {
+    "node": ">=8.0.0",
+    "npm": ">=5.7.1"
+  },
+  "author": "CKSource (http://cksource.com/)",
+  "license": "GPL-2.0-or-later",
+  "homepage": "https://ckeditor.com",
+  "bugs": "https://github.com/ckeditor/ckeditor5-angular/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ckeditor/ckeditor5-angular.git"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.+(js|ts)": [
+      "eslint --quiet"
+    ]
+  },
+  "eslintIgnore": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "src/polyfills.ts"
+  ]
 }
